@@ -11,7 +11,11 @@ platform :ios do
   PRIVATE_PATH = "git@git.yourcompany.com:your_group/YourSpecs.git"
   PRIVATE_SPEC = "YourSpecs"
   SOURCES = [MASTER_PATH, PRIVATE_PATH]
-
+  
+  lane :do_publish do |options|
+      puts "Hi there"
+  end
+  
   desc 'Deploy a new version to the App Store'
   lane :do_publish_prod do |options|
     app_identifier = options[:ios_app_identifier]
